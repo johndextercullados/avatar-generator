@@ -93,7 +93,7 @@ export default function Upload() {
                   : 'bg-gray-400/40 text-gray-500 border-gray-400 shadow-none cursor-not-allowed opacity-50'
                 }`}
             >
-              {imagePreview ? "Analyze Portrait ⚔️" : "Awaiting Portrait..."}
+              {imagePreview ? "Analyze Portrait" : "Awaiting Portrait..."}
             </button>
           </div>
         </div>
