@@ -23,6 +23,7 @@ export default function Upload() {
 
   return (
     <div
+    /* BACKGROUND */
       className="min-h-screen flex flex-col justify-center items-center px-4 md:px-6 py-12 border-8 border-[#2c221e] relative"
       style={{
         /* --- SAME BACKGROUNFD NLNG SIGURO SA LAHAT --- */

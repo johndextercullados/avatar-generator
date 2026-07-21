@@ -23,7 +23,7 @@ export default function Loading() {
 
     // Simulate AI processing time and automatically push to customization screen
     const redirectTimeout = setTimeout(() => {
-      navigate('/customize'); // This will be Phase 4!
+      navigate('/edit'); // This will be Phase 4!
     }, 6000);
 
     return () => {
@@ -34,6 +34,7 @@ export default function Loading() {
 
   return (
     <div
+    /* BACKGROUND */
       className="min-h-screen flex flex-col justify-center items-center px-4 md:px-6 py-12 border-8 border-[#2c221e] relative"
       style={{
         backgroundImage: `
