@@ -43,9 +43,6 @@ export default function ChibiCanvas({
       ) : (
         <div className="z-10 flex flex-col items-center justify-center p-4 text-center">
           <span className="text-5xl mb-2 animate-bounce">🧙‍♂️</span>
-          <p className="text-xs font-bold text-[#2c221e] uppercase tracking-wider">
-            Awaiting Hero Likeness
-          </p>
         </div>
       )}
 
