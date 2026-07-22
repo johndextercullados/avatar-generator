@@ -13,8 +13,20 @@ export default function Editing() {
   const [bgColor, setBgColor] = useState('#e2d5b6');
   const [hasFrame, setHasFrame] = useState(false);
 
+  const handleExport = () => {
+    navigate('/download', {
+      state: {
+        selectedTerrain,
+        selectedPet,
+        bgColor,
+        hasFrame,
+        // imageUrl: avatarImageUrl // Pass uploaded/generated image here when available
+      }
+    });
+  };
+
   return (
-    <div 
+    <div
       className="min-h-screen flex flex-col justify-between items-center px-4 md:px-8 py-8 border-8 border-[#2c221e] relative"
       style={{
         backgroundImage: `
@@ -29,7 +41,7 @@ export default function Editing() {
     >
       {/* HEADER */}
       <div className="w-full max-w-6xl flex justify-between items-center bg-[#fbf5e2]/85 backdrop-blur-[3px] p-4 rounded-xl border-2 border-[#2c221e] shadow-lg mb-6 z-10">
-        <button 
+        <button
           onClick={() => navigate('/upload')}
           className="bg-[#2c221e] hover:bg-[#453630] text-[#f4ebd0] text-xs font-bold px-3 py-1.5 rounded border border-[#baa07b] uppercase tracking-wider transition-colors duration-150 shadow-md"
         >
@@ -45,26 +57,26 @@ export default function Editing() {
           </h1>
         </div>
 
-        <button 
-          onClick={() => navigate('/download')}
+        <button
+          onClick={handleExport}
           className="bg-[#b85c38] hover:bg-[#a04e2e] text-[#f4ebd0] text-xs font-bold px-4 py-2 rounded-lg border-2 border-[#2c221e] uppercase tracking-wider transition-all duration-150 shadow-[0_3px_0_0_#5c2e1c] hover:translate-y-[1px] hover:shadow-[0_1px_0_0_#5c2e1c] active:translate-y-[3px] active:shadow-none"
         >
-          Export Hero ⚔️
+          Export Avatar ⚔️
         </button>
       </div>
 
       {/* WORKSPACE */}
       <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-6 my-auto z-10">
-        
+
         {/* LEFT COLUMN: CANVAS */}
         <div className="lg:col-span-5 bg-[#fbf5e2]/85 backdrop-blur-[3px] p-6 rounded-2xl border-4 border-[#2c221e] shadow-2xl flex flex-col items-center justify-center min-h-[420px]">
           <h3 className="text-xs font-black text-[#2c221e] uppercase tracking-widest mb-4">
             ✦ Hero Portrait Display ✦
           </h3>
-          
-          <ChibiCanvas 
-            terrain={selectedTerrain} 
-            pet={selectedPet} 
+
+          <ChibiCanvas
+            terrain={selectedTerrain}
+            pet={selectedPet}
             bgColor={bgColor}
             hasFrame={hasFrame}
           />

@@ -6,8 +6,9 @@ export default function FrameToggle({ hasFrame, onToggleFrame }) {
       <div className="flex items-center space-x-2">
         <span className="text-lg">🖼️</span>
         <span className="text-xs font-bold text-[#2c221e] uppercase tracking-wider">
-          Enchanted Gold Border
+          Add Gold Border
         </span>
+        <span className="text-lg">🖼️</span>
       </div>
       <button
         onClick={() => onToggleFrame && onToggleFrame(!hasFrame)}
