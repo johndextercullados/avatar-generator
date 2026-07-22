@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ChibiCanvas({ imageSrc, terrain = 'meadow', pet = null, hasFrame = false }) {
+export default function ChibiCanvas({ imageSrc, terrain = null, pet = null, hasFrame = false, bgColor = '#e2d5b6' }) {
   return (
     <div className={`relative w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden border-4 border-[#2c221e] shadow-inner bg-[#e2d5b6] flex items-center justify-center transition-all ${hasFrame ? 'ring-4 ring-[#baa07b] ring-offset-2 ring-offset-[#2c221e]' : ''}`}>
       
