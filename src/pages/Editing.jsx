@@ -3,12 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import ChibiCanvas from '../components/ChibiCanvas';
 import TerrainPicker from '../components/TerrainPicker';
 import PetPicker from '../components/PetPicker';
+import ColorPicker from '../components/ColorPicker';
+import FrameToggle from '../components/FrameToggle';
 
 export default function Editing() {
-
   const navigate = useNavigate();
   const [selectedTerrain, setSelectedTerrain] = useState('meadow');
   const [selectedPet, setSelectedPet] = useState('axo');
+  const [bgColor, setBgColor] = useState('#e2d5b6');
+  const [hasFrame, setHasFrame] = useState(false);
 
   return (
     <div 
@@ -19,7 +22,7 @@ export default function Editing() {
           linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.1) 15%, transparent 35%),
           url('/assets/design/bg-castle.png')
         `,
-          backgroundSize: '24px 24px, 100% 100%, cover',
+        backgroundSize: '24px 24px, 100% 100%, cover',
         backgroundPosition: 'center, center, center',
         backgroundRepeat: 'repeat, no-repeat, no-repeat'
       }}
@@ -59,13 +62,20 @@ export default function Editing() {
             ✦ Hero Portrait Display ✦
           </h3>
           
-          <ChibiCanvas terrain={selectedTerrain} pet={selectedPet} />
+          <ChibiCanvas 
+            terrain={selectedTerrain} 
+            pet={selectedPet} 
+            bgColor={bgColor}
+            hasFrame={hasFrame}
+          />
         </div>
 
         {/* RIGHT COLUMN: TOOLKIT */}
         <div className="lg:col-span-7 bg-[#fbf5e2]/85 backdrop-blur-[3px] p-6 md:p-8 rounded-2xl border-4 border-[#2c221e] shadow-2xl space-y-6">
           <TerrainPicker selectedTerrain={selectedTerrain} onSelectTerrain={setSelectedTerrain} />
           <PetPicker selectedPet={selectedPet} onSelectPet={setSelectedPet} />
+          <ColorPicker selectedColor={bgColor} onSelectColor={setBgColor} />
+          <FrameToggle hasFrame={hasFrame} onToggleFrame={setHasFrame} />
         </div>
 
       </div>
